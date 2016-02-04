@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+	<head>
+		<title>Session7 HideOddRows</title>
+	</head>
+
+	<body>
+		<p>Problem Statement: Write JavaScript code hideOddRows.js that attaches to the button click event and hides the odd rows of the table when clicked</p>
+		<table border= 1px id="tbl" width= 90px>
+			<a><tr><td id ="first">row 1 </td></tr></a>
+			<tr><td>row 2 </td></tr>
+			<tr><td>row 3 </td></tr>
+			<tr><td>row 4 </td></tr>
+			<tr><td>row 5 </td></tr>
+			<tr><td>row 6 </td></tr>
+			<tr><td>row 7 </td></tr>
+		</table>
+
+	<!-- Attaching as inline html attributes --> 
+ 	<button onClick = hiderows()>Hide odd rows</button> 
+ 	 <script type="text/javascript">
+		function hiderows() {
+			var rows = document.querySelectorAll("body table tr");
+			for (var i =0; i <rows.length; i +=2){
+				rows[i].style.display="none";
+			}
+		}
+			</script>
+
+
+
+	<!--for attaching to element properties with js -->
+	<button id ="btn">Click me</button> 
+
+				
+			<script>
+			var rows = document.querySelectorAll("body table tr");
+			btn.onclick = function red(){
+				for (var i =0; i < rows.length-1; i +=2){
+				// rows[i].style.display="none";
+							rows[i+1].style.color="red";
+											
+			}
+		}
+		</script>
+
+
+<!--Using DOM event listener-->
+<button id ="buton">Click me for event listener</button> 
+
+<script type="text/javascript">
+var rows = document.querySelectorAll("body table tr");
+
+//var ref = document.getElementById('buton');
+
+	buton.addEventListener('click', function blue(){ 
+		
+		for (var i =0; i <rows.length; i +=3) {
+				 	rows[i].style.backgroundColor="blue";
+	}
+				 }
+				 )
+</script>
+	</body>
